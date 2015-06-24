@@ -276,7 +276,7 @@ void bf_approx::sampling_round(const std::vector<fitness_vector> &points, const 
 	}
 	
 	double tmp = m_box_volume[idx] / delta;
-	double required_no_samples = 0.5 * ( (1. + m_gamma) * log( round ) + log_factor ) * tmp * tmp;
+	double required_no_samples = 0.5 * ( (1. + m_gamma) * log( (double) round ) + log_factor ) * tmp * tmp;
 
 	while(m_no_samples[idx] < required_no_samples) {
 		++m_no_samples[idx];

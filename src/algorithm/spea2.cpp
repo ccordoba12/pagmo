@@ -158,7 +158,7 @@ void spea2::evolve(population &pop) const
 
 		
 		//1 - Computation of individuals' fitness (according to raw fitness and density)
-		compute_spea2_fitness(F, sqrt(new_pop.size()), new_pop, prob);
+		compute_spea2_fitness(F, sqrt( (double) new_pop.size() ), new_pop, prob);
 
 		ordered_by_fitness = pagmo::util::neighbourhood::order(F);
 

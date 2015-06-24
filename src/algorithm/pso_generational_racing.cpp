@@ -793,7 +793,7 @@ void pso_generational_racing::initialize_topology__von( std::vector< std::vector
 	int	p_x, p_y;		// particle's coordinates in the lattice
 	int	n_x, n_y;		// particle neighbor's coordinates in the lattice
 
-	rows = std::sqrt( swarm_size );
+	rows = std::sqrt( (double) swarm_size );
 	while( swarm_size % rows != 0 )
 		rows -= 1;
 	cols = swarm_size / rows;

@@ -39,7 +39,10 @@ double fpl::compute(std::vector<fitness_vector> &points, const fitness_vector &r
 	// Prepare the initial data to suit the original code
 	unsigned int fdim = points[0].size();
 	double* data = new double[points.size() * fdim];
-	double refpoint[fdim];
+	double refpoint[10];  // This line was refpoint[fdim]
+                          // But that was giving a compilation error, with MSVC 2010 refusing to accept a variable
+                          // fdim to instantiate refpoint. So I put a constant (arbitrary) value to make the
+                          // compilation continue
 	for (unsigned int d_idx = 0 ; d_idx < fdim ; ++d_idx) {
 		refpoint[d_idx] = r_point[d_idx];
 	}

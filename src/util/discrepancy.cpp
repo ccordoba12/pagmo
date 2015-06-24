@@ -31,7 +31,7 @@ double van_der_corput(unsigned int n, unsigned int base) {
 	unsigned int i = n;
 	while (i > 0) {
 		retval += f * (i % base);
-		i = floor(i / base);
+		i = floor( static_cast<double>(i / base) );
 		f = f / base;
 	}
 	return retval;

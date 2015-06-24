@@ -5,6 +5,7 @@ ENABLE_TESTING()
 CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 # Setup and include CMake modules.
 SET(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake_modules)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
 
 # We activate compiler dependent flags
 INCLUDE(CheckCXXCompilerFlag)

@@ -462,7 +462,7 @@ std::vector<int> sga_gray::double_to_binary(const double &number, const double &
 		} else {
 			binary[position] = 1;
 		}
-		temp_number = (int)std::floor(temp_number/2);
+		temp_number = (int)std::floor( static_cast<double>(temp_number/2) );
 		position++;
 	}
 	// reverse the order as this algorithm provides the reverse binary reprentation

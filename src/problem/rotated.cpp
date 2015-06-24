@@ -167,7 +167,7 @@ void rotated::configure_new_bounds()
 	}
 	// Expand the box to cover the whole original search space. We may here call directly
 	// the set_bounds(const double &, const double &) as all dimensions are now equal
-	set_bounds(-sqrt(2), sqrt(2));
+	set_bounds(-sqrt(2.0), sqrt(2.0));
 }
 
 // Used to normalize the original upper and lower bounds

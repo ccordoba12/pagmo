@@ -75,31 +75,31 @@ double hv3d::compute(std::vector<fitness_vector> &points, const fitness_vector &
 
 	std::multiset<fitness_vector>::iterator p;
 	std::multiset<fitness_vector>::iterator q;
-	for(std::vector<fitness_vector>::size_type idx = 1 ; idx < points.size() ; ++idx) {
-		p = T.insert(points[idx]);
-		q = (p);
-		++q; //setup q to be a successor of p
-		if ( (*q)[1] <= (*p)[1] ) { // current point is dominated
-			T.erase(p); // disregard the point from further calculation
-		} else {
-			V += A * fabs(z3 - (*p)[2]);
-			z3 = (*p)[2];
-			std::multiset<fitness_vector>::reverse_iterator rev_it(q);
-			++rev_it;
+	//for(std::vector<fitness_vector>::size_type idx = 1 ; idx < points.size() ; ++idx) {
+	//	p = T.insert(points[idx]);
+	//	q = (p);
+	//	++q; //setup q to be a successor of p
+	//	if ( (*q)[1] <= (*p)[1] ) { // current point is dominated
+	//		T.erase(p); // disregard the point from further calculation
+	//	} else {
+	//		V += A * fabs(z3 - (*p)[2]);
+	//		z3 = (*p)[2];
+	//		std::multiset<fitness_vector>::reverse_iterator rev_it(q);
+	//		++rev_it;
 
-			std::multiset<fitness_vector>::reverse_iterator erase_begin (rev_it);
-			std::multiset<fitness_vector>::reverse_iterator rev_it_pred;
-			while((*rev_it)[1] >= (*p)[1] ) {
-				rev_it_pred = rev_it;
-				++rev_it_pred;
-				A -= fabs(((*rev_it)[0] - (*rev_it_pred)[0])*((*rev_it)[1] - (*q)[1]));
-				++rev_it;
-			}
-			A += fabs(((*p)[0] - (*(rev_it))[0])*((*p)[1] - (*q)[1]));
-			T.erase(rev_it.base(),erase_begin.base());
-		}
-	}
-	V += A * fabs(z3 - r_point[2]);
+	//		std::multiset<fitness_vector>::reverse_iterator erase_begin (rev_it);
+	//		std::multiset<fitness_vector>::reverse_iterator rev_it_pred;
+	//		while((*rev_it)[1] >= (*p)[1] ) {
+	//			rev_it_pred = rev_it;
+	//			++rev_it_pred;
+	//			A -= fabs(((*rev_it)[0] - (*rev_it_pred)[0])*((*rev_it)[1] - (*q)[1]));
+	//			++rev_it;
+	//		}
+	//		A += fabs(((*p)[0] - (*(rev_it))[0])*((*p)[1] - (*q)[1]));
+	//		T.erase(rev_it.base(),erase_begin.base());
+	//	}
+	//}
+	//V += A * fabs(z3 - r_point[2]);
 
 	return V;
 }

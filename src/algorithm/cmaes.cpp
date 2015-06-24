@@ -187,7 +187,7 @@ void cmaes::evolve(population &pop) const
 	}
 	
 	double damps = 1 + 2*std::max(0.0, std::sqrt((mueff-1)/(N+1))-1) + cs;	// damping for sigma
-	double chiN = std::sqrt(N) * (1-1.0/(4*N)+1.0/(21*N*N));		// expectation of ||N(0,I)|| == norm(randn(N,1))
+	double chiN = std::sqrt( (double) N) * (1-1.0/(4*N)+1.0/(21*N*N));		// expectation of ||N(0,I)|| == norm(randn(N,1))
 
 	// Initializing and allocating (here one could use mutable data member to avoid redefinition of non const data)
 

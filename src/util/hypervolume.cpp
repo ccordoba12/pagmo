@@ -420,7 +420,7 @@ std::vector<double> hypervolume::contributions(const fitness_vector &r_point) co
 double hypervolume::get_expected_operations(const unsigned int n, const unsigned int d)
 {
 	if (d <= 3) {
-		return d * n * log(n);  // hv3d
+		return d * n * log( (double) n);  // hv3d
 	} else if (d == 4) {
 		return 4.0 * n * n;  // hv4d
 	} else {

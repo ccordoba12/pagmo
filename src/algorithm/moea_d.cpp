@@ -167,7 +167,7 @@ void moead::reksum(std::vector<std::vector<double> > &retval,
 			if (n_f == 2) {
 				H = n_w-1;
 			} else if (n_f == 3) {
-				H = floor(0.5 * (sqrt(8*n_w + 1) - 3));
+				H = floor(0.5 * (sqrt( (double) (8*n_w + 1) ) - 3));
 			} else {
 				H = 1;
 				while(boost::math::binomial_coefficient<double>(H+n_f-1, n_f-1) <= n_w) {
